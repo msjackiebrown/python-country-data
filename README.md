@@ -84,7 +84,15 @@ Below are some screenshots of the Country Data Visualizer app in action:
 
 ---
 
+## Resources Used
+
+- Country data source: [Scrape This Site - Simple Countries](https://www.scrapethissite.com/pages/simple/)
+- Python libraries: requests, BeautifulSoup, matplotlib, tkinter
+- Sample data: see `data/sample_countries.csv`
+
+
 ## Author
 
 **msjackiebrown**  
 [GitHub](https://github.com/msjackiebrown)
+

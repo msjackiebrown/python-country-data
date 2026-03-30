@@ -90,9 +90,16 @@ Below are some screenshots of the Country Data Visualizer app in action:
 - Python libraries: requests, BeautifulSoup, matplotlib, tkinter
 - Sample data: see `data/sample_countries.csv`
 
+## Viewing Notebooks on GitHub
 
-## Author
+GitHub displays Jupyter notebooks as static previews—you can view code and output, but cannot run or interact with cells directly on GitHub.
 
-**msjackiebrown**  
-[GitHub](https://github.com/msjackiebrown)
+**To interact with notebooks:**
+- Download the `.ipynb` file and open it locally in JupyterLab, Jupyter Notebook, or VS Code.
+- Or, use [nbviewer](https://nbviewer.org/) to view a nicely rendered, read-only version online. Just paste the GitHub URL of the notebook into nbviewer.
+
+**Example:**
+1. Copy the URL of the notebook file on GitHub (e.g., `https://github.com/youruser/python-country-data/blob/main/notebooks/country_matplotlib_plots.ipynb`)
+2. Go to https://nbviewer.org/
+3. Paste the URL and click "Go" to view the notebook.
 

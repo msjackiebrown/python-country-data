@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Country Area & Population Comparison</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #4285f4;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #e3f2fd;
+      padding: 0.5rem;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #4285f4;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 1rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: #4285f4;
+      margin-bottom: 0.5rem;
+    }
+
+    canvas {
+      max-width: 100%;
+      height: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    table, th, td {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+    }
+
+    th {
+      background-color: #f1f1f1;
+    }
+
+    .key-takeaways {
+      background-color: #e3f2fd;
+      padding: 1rem;
+      border-left: 4px solid #4285f4;
+    }
+
+    footer {
+      background-color: #4285f4;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Country Area & Population Comparison</h1>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#scatter">Scatter Plot</a>
+    <a href="#area">Bar Chart (Area)</a>
+    <a href="#population">Bar Chart (Population)</a>
+    <a href="#table">Table</a>
+    <a href="#takeaways">Key Takeaways</a>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- Scatter Plot Section -->
+    <section id="scatter">
+      <h2>Scatter Plot: Population vs. Area</h2>
+      <canvas id="scatterChart"></canvas>
+    </section>
+
+    <!-- Bar Chart: Top 10 Countries by Area -->
+    <section id="area">
+      <h2>Bar Chart: Top 10 Countries by Area</h2>
+      <canvas id="areaChart"></canvas>
+    </section>
+
+    <!-- Bar Chart: Top 10 Countries by Population -->
+    <section id="population">
+      <h2>Bar Chart: Top 10 Countries by Population</h2>
+      <canvas id="populationChart"></canvas>
+    </section>
+
+    <!-- Comparison Table -->
+    <section id="table">
+      <h2>Comparison Table</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th>Area (km²)</th>
+            <th>Population</th>
+            <th>Density (people/km²)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>India</td>
+            <td>3.3M</td>
+            <td>1.4B</td>
+            <td>420</td>
+          </tr>
+          <tr>
+            <td>China</td>
+            <td>9.6M</td>
+            <td>1.4B</td>
+            <td>150</td>
+          </tr>
+          <tr>
+            <td>Canada</td>
+            <td>10M</td>
+            <td>40M</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>USA</td>
+            <td>9.6M</td>
+            <td>330M</td>
+            <td>35</td>
+          </tr>
+          <tr>
+            <td>Russia</td>
+            <td>17M</td>
+            <td>144M</td>
+            <td>8</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Key Takeaways -->
+    <section id="takeaways" class="key-takeaways">
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li>Large countries often have low population density.</li>
+        <li>Small countries can have high population.</li>
+        <li>Population density is critical for urban planning and resource allocation.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Country Area & Population Comparison</p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Contact Us</a></p>
+  </footer>
+
+  <script>
+    // Scatter Plot: Population vs. Area
+    const scatterCtx = document.getElementById('scatterChart').getContext('2d');
+    new Chart(scatterCtx, {
+      type: 'scatter',
+      data: {
+        datasets: [{
+          label: 'Country Data',
+          data: [
+            { x: 10, y: 40 }, // Canada
+            { x: 3, y: 1400 }, // India
+            { x: 9, y: 1400 }, // China
+            { x: 9, y: 330 }, // USA
+            { x: 17, y: 144 }, // Russia
+            { x: 0.8, y: 110 }, // Vatican City
+            { x: 1.7, y: 100 }, // Monaco
+            { x: 1.3, y: 80 }, // Singapore
+            { x: 0.6, y: 60 }, // Qatar
+          ],
+          backgroundColor: 'rgba(76, 175, 80, 0.6)',
+        }]
+      },
+      options: {
+        scales: {
+          x: { title: { display: true, text: 'Area (million km²)' } },
+          y: { title: { display: true, text: 'Population (millions)' } }
+        }
+      }
+    });
+
+    // Bar Chart: Top 10 Countries by Area
+    const areaCtx = document.getElementById('areaChart').getContext('2d');
+    new Chart(areaCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Russia', 'Canada', 'USA', 'China', 'Brazil', 'Australia', 'India', 'Argentina', 'Algeria', 'Kazakhstan'],
+        datasets: [{
+          label: 'Area (million km²)',
+          data: [17, 10, 9.6, 9.6, 8.5, 7.7, 3.3, 2.8, 2.4, 2.7],
+          backgroundColor: '#4285f4'
+        }]
+      },
+      options: {
+        scales: {
+          y: { beginAtZero: true, title: { display: true, text: 'Area (million km²)' } }
+        }
+      }
+    });
+
+    // Bar Chart: Top 10 Countries by Population
+    const populationCtx = document.getElementById('populationChart').getContext('2d');
+    new Chart(populationCtx, {
+      type: 'bar',
+      data: {
+        labels: ['India', 'China', 'USA', 'Indonesia', 'Pakistan', 'Brazil', 'Nigeria', 'Bangladesh', 'Russia', 'Mexico'],
+        datasets: [{
+          label: 'Population (millions)',
+          data: [1400, 1400, 330, 273, 220, 213, 206, 166, 144, 112],
+          backgroundColor: '#f44336'
+        }]
+      },
+      options: {
+        scales: {
+          y: { beginAtZero: true, title: { display: true, text: 'Population (millions)' } }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

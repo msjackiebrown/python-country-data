@@ -1,0 +1,4 @@
+Project Idea: Create a program that will show world population and areas. The purpose if to learn how to use the Beautiful Soup and MatLib libraries in Python. I want to scrape from this site: https://www.scrapethissite.com/pages/simple/
+
+Once I get the data, I need to use the MatLib libraries to generate scatter plot and bar gaph. I have wireframe attached: wireframe.html.
+

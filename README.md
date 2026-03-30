@@ -1,6 +1,6 @@
 # Python Country Data
 
-A public, MIT-licensed Python project for exploring and visualizing country data using Matplotlib. Designed for learning, sharing, and portfolio demonstration.
+A desktop application for exploring and visualizing country statistics—such as population and area—using interactive charts and tables. This project demonstrates how to fetch real-world data, process it, and present it in a user-friendly GUI built with Tkinter and Matplotlib. Ideal for anyone learning Python data workflows, GUI programming, and data visualization techniques. Suitable for students, educators, and anyone interested in country-level data analysis.
 
 ## Features
 - Modular code structure for easy expansion
@@ -87,4 +87,4 @@ Below are some screenshots of the Country Data Visualizer app in action:
 ## Author
 
 **msjackiebrown**  
-[GitHub](https://github.com/msjackiebrown)  
+[GitHub](https://github.com/msjackiebrown)
